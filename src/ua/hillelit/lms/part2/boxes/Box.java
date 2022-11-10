@@ -31,11 +31,20 @@ public class Box<T extends Fruit> {
   }
 
   public boolean compare(Box box) {
-    return this.getWeight().equals(box.getWeight());
+    if (box == null) {
+      System.out.println("Box is Null!");
+      return false;
+    } else {
+      return this.getWeight().equals(box.getWeight());
+    }
   }
 
   public void merge(Box<T> box) {
-    this.fruitBox.addAll(box.fruitBox);
+    if (box == null) {
+      System.out.println("Box is Null!");
+    } else {
+      this.fruitBox.addAll(box.fruitBox);
+    }
   }
 
 }
